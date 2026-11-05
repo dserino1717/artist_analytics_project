@@ -106,8 +106,8 @@ BID), so artists can easily join across the two APIs. Setlist songs match album 
 ├── SQL/
 │   ├── DDL_DML.sql                     # Full SQL script to clean, transform data, and create tables
 ├── Tableau/
-│   ├── Artist Analytics Capstone Project 1.twbx  # Packaged workbook with data source attached
-│   ├── Screenshot 2026-11-05 113433.png          # Data model used within Tableau data pane
+│   ├── Artist Analytics.twbx           # Packaged workbook with data source attached
+│   ├── Data Model                      # Data model used within Tableau data pane
 └── README.md
 ```
 
