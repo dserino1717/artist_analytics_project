@@ -85,7 +85,7 @@ BID), so artists can easily join across the two APIs. Setlist songs match album 
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repo Structure
 
 ```
 ├── alteryx/
@@ -118,19 +118,16 @@ BID), so artists can easily join across the two APIs. Setlist songs match album 
 
 ## ⚠️ Limitations
 
-- **Fan-logged data:** setlist.fm is crowd-sourced, so recent shows may not be logged yet. Kendrick Lamar's 2025 Grand National Tour is logged under a joint Kendrick Lamar & SZA entry and is missing here, so that increased his days-to-road value and the year-over-year show growth.
-- **Not every setlist is a concert:** TV tapings, pop-ups and festival sets are logged too, and a tour-show rule filters them where it matters.
-- **Collaborations show up as covers:** setlist.fm labels songs by side projects and features (e.g. Silk Sonic) as covers; these are reclassified as *Collaboration*.
-- **City-level coordinates:** venues share their city's latitude and longitude.
-- **Hand-maintained album list:** the 29 core albums are curated (excluding bootlegs, demos, live albums and fan compilations) and need updating when an artist releases a new album.
+- **User-logged data:** setlist.fm is crowd-sourced, so recent shows may not be logged yet. Kendrick Lamar's 2025 Grand National Tour was missing from this data, so that increased his days-to-road value and the year-over-year show growth.
+- **Not every setlist is a concert:** There are some setlists included that aren't from concerts, like NPR Tiny Desk or a small TV set, so I added a tour-show rule filter
+- **Collaborations show up as covers on setlist.fm:** setlist.fm labels songs by side projects and features (e.g., Silk Sonic) as covers
 
 ---
 
-## 🔭 What I'd Build Next
+## Some Future Recommendations
 
-- Schedule the pipeline with Alteryx writing straight to Snowflake
-- Pull joint-artist entries to close tour data gaps
-- Add demand data (ticket prices, listener counts) to test whether new-album shows sell as well as catalogue-heavy ones
+- Schedule the pipeline with Alteryx connected to Snowflake automatically
+- Add demand data (ticket prices, listener counts) to add more depth to artist performance
 - A tour-leg table (show → next show, distance via `HAVERSINE`) for a routing-efficiency map
 
 ---
