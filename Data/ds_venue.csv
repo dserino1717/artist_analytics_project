@@ -1,0 +1,101 @@
+VENUE_ID,VENUE_NAME,CITY_NAME,STATE_NAME,STATE_CODE,COUNTRY_CODE,COUNTRY_NAME,LATITUDE,LONGITUDE
+13d05d01,Acrisure Stadium,Pittsburgh,Pennsylvania,PA,US,United States,40.4406248,-79.9958864
+13d09921,Private Venue,Los Angeles,California,CA,US,United States,34.052,-118.244
+13d0b545,SoFi Stadium,Inglewood,California,CA,US,United States,33.9616801,-118.3531311
+13d0e1b1,Lumberyard Bike Park,Portland,Oregon,OR,US,United States,45.5234515,-122.6762071
+13d119ad,Kia Center,Orlando,Florida,FL,US,United States,28.5383355,-81.3792365
+13d11df5,BK Arena,Kigali,Kigali,09,RW,Rwanda,-1.9536111,30.0605556
+13d17139,MorumBIS,São Paulo,São Paulo,SP,BR,Brazil,-23.5475,-46.63611111
+13d1f951,Private Venue,Cannes,Provence-Alpes-Côte d'Azur,93,FR,France,43.55,7.017
+13d20589,The Sylvee,Madison,Wisconsin,WI,US,United States,43.0730517,-89.4012302
+13d20969,"Muse, Studio City",Los Angeles,California,CA,US,United States,34.052,-118.244
+13d21931,La Blogothèque,Paris,Île-de-France,11,FR,France,48.853,2.349
+13d22139,Vorst Nationaal / Forest National,Vorst / Forest,Brussels-Capital Region,BE-BRU,BE,Belgium,50.8,4.317
+13d2219d,Glattbrug,Rümlang,Zurich,ZH,CH,Switzerland,47.44713,8.52938
+13d245f5,Sasktel Centre Lounge,Saskatoon,Saskatchewan,SK,CA,Canada,52.116786331,-106.634521548
+13d2491d,Walker Theatre,Chattanooga,Tennessee,TN,US,United States,35.0456297,-85.3096801
+13d27961,Ace Hotel,Chicago,Illinois,IL,US,United States,41.850033,-87.6500523
+13d285a1,Royale,Boston,Massachusetts,MA,US,United States,42.3584308,-71.0597732
+13d28969,Axiata Arena,Kuala Lumpur,Kuala Lumpur,14,MY,Malaysia,3.1666667,101.7
+13d291d1,MTELUS,Montreal,Quebec,QC,CA,Canada,45.5088375,-73.587809
+13d2a16d,Corner Hotel,Melbourne,Victoria,VIC,AU,Australia,-37.813996564,144.963322878
+13d2a9f5,Fisher Green Stage,Seattle,Washington,WA,US,United States,47.6062095,-122.3320708
+13d2c18d,Yonge-Dundas Square,Toronto,Ontario,ON,CA,Canada,43.700113788,-79.416304194
+13d2c599,Sportpaleis,Merksem,Antwerp,BE.AN,BE,Belgium,51.25,4.45
+13d2cda1,Club,Borgerhout,Antwerp,BE.AN,BE,Belgium,51.117,5.083
+13d2edd9,Live Music Hall,Cologne,North Rhine-Westphalia,07,DE,Germany,50.9333333,6.95
+13d2f571,XFINITY Theatre,Hartford,Connecticut,CT,US,United States,41.7637111,-72.6850932
+13d36109,Utilita Arena Birmingham,Birmingham,England,ENG,GB,United Kingdom,52.4666667,-1.9166667
+13d37525,X-TRA,Zurich,Zürich,ZH,CH,Switzerland,47.3666667,8.55
+13d379bd,du Arena,Abu Dhabi,Abu Dhabi,01,AE,United Arab Emirates,24.4666667,54.3666667
+13d39d15,Empire Polo Club,Indio,California,CA,US,United States,33.7205771,-116.2155619
+13d39d59,Paul Paul Theater,Fresno,California,CA,US,United States,36.7477272,-119.7723661
+13d3a19d,El Rey Theater,Chico,California,CA,US,United States,39.7284945,-121.8374777
+13d3b9a1,Monarch,Berlin,Berlin,16,DE,Germany,52.5166667,13.4
+13d3c115,Cruise Ship,Fort Lauderdale,Florida,FL,US,United States,26.1223084,-80.1433786
+13d3d1a1,The Ohio State University,Columbus,Ohio,OH,US,United States,39.9611755,-82.9987942
+13d3d509,Beats 1 Studio,New York,New York,NY,US,United States,40.7142691,-74.0059729
+13d411b5,Bar Le Cha Cha,Sainte-Thérèse,Quebec,QC,CA,Canada,45.639217512,-73.827567101
+13d419ed,,Wisconsin Dells,Wisconsin,WI,US,United States,43.6274794,-89.7709579
+13d43115,Kingswood Amphitheatre at Kings Dominion,Doswell,Virginia,VA,US,United States,37.8601402,-77.4641491
+13d4690d,Genting Arena,Birmingham,England,ENG,GB,United Kingdom,52.4666667,-1.9166667
+13d495d5,Erie County Fairgrounds,Hamburg,New York,NY,US,United States,42.2342543,-73.8501281
+13d4a565,College Park Center,Arlington,Texas,TX,US,United States,32.735687,-97.1080656
+13d4dd51,The Tonight Show Starring Jimmy Fallon,New York,New York,NY,US,United States,40.7142691,-74.0059729
+13d505e5,The Foundry at The Fillmore,Philadelphia,Pennsylvania,PA,US,United States,39.952335,-75.163789
+13d53d51,Rockwell,Salt Lake City,Utah,UT,US,United States,40.7607794,-111.8910474
+13d55569,Little Caesars Arena,Detroit,Michigan,MI,US,United States,42.331427,-83.0457538
+13d56115,The Port Lands,Toronto,Ontario,ON,CA,Canada,43.700113788,-79.416304194
+13d58545,The Fillmore Philadelphia,Philadelphia,Pennsylvania,PA,US,United States,39.952335,-75.163789
+13d5b1b9,Oude Zaal,Amsterdam,North Holland,07,NL,Netherlands,52.373,4.9
+13d5c951,Qudos Bank Arena,Sydney,New South Wales,NSW,AU,Australia,-33.867849964,151.207323074
+13d5cd39,The Strombo Show,Toronto,Ontario,ON,CA,Canada,43.700113788,-79.416304194
+13d5e579,T-Mobile Arena,Las Vegas,Nevada,NV,US,United States,36.1749705,-115.137223
+13d5f135,Riverplex,West Homestead,Pennsylvania,PA,US,United States,40.3939581,-79.9119946
+13d5fd59,Impérial Bell,Quebec City,Quebec,QC,CA,Canada,46.812,-71.215
+13d60179,Terrace,Madison,Wisconsin,WI,US,United States,43.0730517,-89.4012302
+13d60181,KOKO,London,England,ENG,GB,United Kingdom,51.508415256,-0.1255327463
+13d60ddd,The Fillmore,Charlotte,North Carolina,NC,US,United States,35.2270869,-80.8431268
+13d615b1,The Grey Eagle,Asheville,North Carolina,NC,US,United States,35.6009452,-82.554015
+13d61921,Il Motore,Montreal,Quebec,QC,CA,Canada,45.5088375,-73.587809
+13d61949,The Ellen DeGeneres Show,Burbank,California,CA,US,United States,34.1808392,-118.3089661
+13d61d0d,Werk II,Leipzig,Saxony,13,DE,Germany,51.33962,12.371292
+13d61d65,Black Sheep Inn,Wakefield,Quebec,QC,CA,Canada,45.666804432,-75.832651189
+13d61d89,Nokia Theatre,Los Angeles,California,CA,US,United States,34.052,-118.244
+13d62159,Prospect Park,Brooklyn,New York,NY,US,United States,40.65,-73.95
+13d621a9,Fox Theatre,Boulder,Colorado,CO,US,United States,40.0149856,-105.2705456
+13d621e1,Northern Alberta Jubilee Auditorium,Edmonton,Alberta,AB,CA,Canada,53.550135939,-113.468712219
+13d621e5,TCU Place,Saskatoon,Saskatchewan,SK,CA,Canada,52.116786331,-106.634521548
+13d62511,Springfield College,Springfield,Massachusetts,MA,US,United States,42.1014831,-72.589811
+13d62565,Bodega,Wellington,Wellington,G2,NZ,New Zealand,-41.278536159,174.776639342
+13d62d41,Stradbally Hall,Stradbally,Laois,15,IE,Ireland,53.219,-8.887
+13d6354d,Bill Graham Civic Auditorium,San Francisco,California,CA,US,United States,37.775,-122.419
+13d635a9,Fritzclub im Postbahnhof,Berlin,Berlin,16,DE,Germany,52.5166667,13.4
+13d635d1,Agganis Arena,Boston,Massachusetts,MA,US,United States,42.3584308,-71.0597732
+13d635dd,Riverside Theater,Milwaukee,Wisconsin,WI,US,United States,43.0389025,-87.9064736
+13d635e1,SPACE,Portland,Maine,ME,US,United States,43.661471,-70.2553259
+13d635f5,Highline Ballroom,New York,New York,NY,US,United States,40.7142691,-74.0059729
+13d635f9,Bikini,Barcelona,Catalonia,56,ES,Spain,41.388786889,2.158985138
+13d63905,Vega,Copenhagen,Capital Region,17,DK,Denmark,55.677681202,12.570934296
+13d63969,Skully's Music Diner,Columbus,Ohio,OH,US,United States,39.9611755,-82.9987942
+13d63981,Orpheum Theatre,Boston,Massachusetts,MA,US,United States,42.3584308,-71.0597732
+13d6398d,Aragon Ballroom,Chicago,Illinois,IL,US,United States,41.850033,-87.6500523
+13d639f5,Saitama Super Arena,Saitama,Saitama,34,JP,Japan,35.908065905,139.656572342
+13d63df1,Alamodome,San Antonio,Texas,TX,US,United States,29.4241219,-98.4936282
+13d63dfd,Johannesburg Stadium,Johannesburg,Gauteng,06,ZA,South Africa,-26.2,28.083
+13d65575,Los Angeles State Historic Park,Los Angeles,California,CA,US,United States,34.052,-118.244
+13d65985,Opolis,Norman,Oklahoma,OK,US,United States,35.2225668,-97.4394777
+13d65df1,Plage du Mourillon,Toulon,Provence-Alpes-Côte d'Azur,93,FR,France,43.117,5.933
+13d669e1,Beatlemania,Hamburg,Hamburg,04,DE,Germany,53.55,10
+13d6c12d,B.B. King Blues Club & Grill,New York,New York,NY,US,United States,40.7142691,-74.0059729
+13d6c5c1,529,Atlanta,Georgia,GA,US,United States,33.7489954,-84.3879824
+13d6c5fd,The Rotunda,Philadelphia,Pennsylvania,PA,US,United States,39.952335,-75.163789
+13d6cd6d,Rumsey Playfield,New York,New York,NY,US,United States,40.7142691,-74.0059729
+13d6d121,Ahoy,Rotterdam,South Holland,11,NL,Netherlands,51.9225,4.479167
+13d6d549,Verizon Arena,North Little Rock,Arkansas,AR,US,United States,34.769536,-92.2670941
+13d6d595,Thomas Wolfe Auditorium,Asheville,North Carolina,NC,US,United States,35.6009452,-82.554015
+13d6d59d,Gillette Stadium,Foxborough,Massachusetts,MA,US,United States,42.0653768,-71.2478308
+13d6d5e5,City Hall Plaza,Boston,Massachusetts,MA,US,United States,42.3584308,-71.0597732
+13d70555,The Republik,Honolulu,Hawaii,HI,US,United States,21.3069444,-157.8583333
+13d71131,Maryland State Fairgrounds,Timonium,Maryland,MD,US,United States,39.4370508,-76.6196915
+13d715f1,BBC Radio 3 Studios,London,England,ENG,GB,United Kingdom,51.508415256,-0.1255327463
