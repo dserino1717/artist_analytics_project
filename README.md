@@ -9,8 +9,12 @@ A little about the technology and data I used...
 |---|---|
 | **Tools** | Alteryx · Snowflake (SQL) · Tableau |
 | **Sources** | setlist.fm API · MusicBrainz API |
-| **Roster** | Bruno Mars · Daniel Caesar · Kendrick Lamar · Mac DeMarco · Sabrina Carpenter |
 | **Scale** | 3,448 shows · ~29,000 songs played · 104 release groups · 5,745 album tracks |
+
+## 🎵 Roster
+
+<img width="1300" height="463" alt="Screenshot 2026-11-05 143122" src="https://github.com/user-attachments/assets/07fa96c4-0436-417b-8c33-1da8167a9f24" />
+
 
 ## 📊 Dashboards
 
