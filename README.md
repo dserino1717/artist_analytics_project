@@ -88,18 +88,26 @@ BID), so artists can easily join across the two APIs. Setlist songs match album 
 ## 📁 Repo Structure
 
 ```
-├── alteryx/
-│   ├── setlistfm_ingest.yxmd          # setlist.fm pull: paging, throttle, retries
-│   └── musicbrainz_ingest.yxmd        # MusicBrainz pull: release groups → tracks
-├── sql/
-│   └── ddl_dml.sql                    # CREATE OR REPLACE + INSERT for every DS_ table
-├── tableau/
-│   └── encore_row_touring.twbx        # packaged workbook with extract
-├── docs/
-│   ├── data_dictionary.md
-│   ├── schema_diagram.drawio
-│   └── handoff_note.md
-├── images/                            # dashboard screenshots and schema diagram
+├── Alteryx/
+│   ├── setlistfm API workflow.yxmd    # setlist.fm API pull, NEED API KEY: paging, throttle, retries
+│   └── musicbrainz API workflow.yxmd  # MusicBrainz API pull, no key needed: release groups and tracks
+├── Data/
+│   └── ds_album.csv                    # Dim table DS_ALBUM 
+│   └── ds_artist.csv                   # Dim table DS_ARTIST
+│   └── ds_song.csv                     # Dim table DS_SONG
+│   └── ds_venue.csv                    # Dim table DS_VENUE
+│   └── show_full_data.csv              # Fact table DS_SHOW      
+│   └── song_performance_full_data.csv  # Fact table DS_SONG_PERFORMANCE                   
+├── Documentation/
+│   └── Capstone Presentation.pptx      # My presentation for this project as a Data Analytics Engineering Consultant at The Information Lab
+│   ├── Documentation.pdf               # Documentation in PDF form
+│   ├── data_dictionary_and_schema.md   # Markdown file of data dictionary and schema for data
+│   ├── handoff_note.md                 # Handoff note to describe how to refresh data, what to watch for and other recommendations
+├── SQL/
+│   ├── DDL_DML.sql                     # Full SQL script to clean, transform data, and create tables
+├── Tableau/
+│   ├── Artist Analytics Capstone Project 1.twbx  # Packaged workbook with data source attached
+│   ├── Screenshot 2026-11-05 113433.png          # Data model used within Tableau data pane
 └── README.md
 ```
 
