@@ -39,7 +39,7 @@ A little about the technology and data I used...
 
 ```mermaid
 flowchart LR
-    A[setlist.fm API] -->|"Alteryx: paging, throttling"| C[(Snowflake RAW)]
+    A[setlist.fm API] -->|"Alteryx: paging, throttling"| C[(Snowflake raw CSV upload)]
     B[MusicBrainz API] -->|"Alteryx: release groups (albums mostly) and tracks, low throttle rate"| C
     C -->|"SQL: cleaning, flatten JSON arrays"| D[(Snowflake star schema)]
     D -->|Extract| E[Tableau dashboards]
