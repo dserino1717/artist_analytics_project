@@ -39,25 +39,25 @@ A little about the technology and data I used...
 
 ```mermaid
 flowchart LR
-    A[setlist.fm API] -->|Alteryx: paging, throttle, 429 retries| C[(Snowflake RAW)]
-    B[MusicBrainz API] -->|Alteryx: release groups → tracks, busy-server retries| C
-    C -->|SQL: LATERAL FLATTEN, cleaning, business rules| D[(Snowflake star schema)]
+    A[setlist.fm API] -->|"Alteryx: paging, throttling"| C[(Snowflake RAW)]
+    B[MusicBrainz API] -->|"Alteryx: release groups (albums mostly) and tracks, low throttle rate"| C
+    C -->|"SQL: cleaning, flatten JSON arrays"| D[(Snowflake star schema)]
     D -->|Extract| E[Tableau dashboards]
 ```
 
 | Step | Tool | Why |
 |---|---|---|
-| API calls, paging, rate limits, retries | **Alteryx** | Download, Generate Rows and Throttle handle paging and limits visually; the API key is read from a local file and never stored in the workflow |
-| Flatten tracklists to one row per track | **Alteryx** | Nested tracklist JSON exceeded CSV cell limits, so it was flattened before export |
-| Load | **Snowsight** | Raw CSVs (UTF-8) loaded as-is into `DS_*_RAW` tables |
-| Flatten setlists, clean, model | **SQL (Snowflake)** | `LATERAL FLATTEN` unnests sets and songs while keeping play order; date parsing, title normalization and business rules live in one repeatable script |
+| API calls, paging, rate limits, retries | **Alteryx** | Download, Generate Rows and Throttle handle paging and request limits, and the API key is read from a local file and never stored in the workflow |
+| Flatten tracklists to one row per track | **Alteryx** | Nested tracklist JSON exceeded CSV cell limits, so it needed to be flattened before export |
+| Load | **Snowflake** | Raw CSVs loaded as-is into `DS_*_RAW` tables |
+| Flatten setlists, clean, then model | **SQL (Snowflake)** | `LATERAL FLATTEN` unnests the sets and songs while keeping play order. Then date parsing and other transformations like title normalization are in one script (shown within this repo) |
 | Visualize | **Tableau** | Relationship model across two fact tables; extract for Tableau Public |
 
 ---
 
 ## 🗂️ Data Model
 
-![Schema diagram](images/schema_diagram.png)
+<img width="1079" height="690" alt="Artist Analytics non transparent drawio" src="https://github.com/user-attachments/assets/b012d724-d511-4174-814a-040754893b04" />
 
 | Table | Type | Grain | Key |
 |---|---|---|---|
@@ -68,35 +68,20 @@ flowchart LR
 | `DS_SHOW` | Fact | One row per past show | `SETLIST_ID` |
 | `DS_SONG_PERFORMANCE` | Fact | One row per song played per show | `SETLIST_ID` + `POSITION_IN_SHOW` |
 
-**How the sources join:** setlist.fm identifies artists by their MusicBrainz ID (MBID), so artists join exactly across both APIs. Setlist songs match album tracks on a **normalized song title** (lowercase, bracketed suffixes like *(feat. …)* removed, punctuation stripped). 75–85% of songs played match a core album; the rest are singles, collaborations and covers.
+**How the sources join:** setlist.fm actually identifies artists by their MusicBrainz ID (M
+BID), so artists can easily join across the two APIs. Setlist songs match album tracks on a **normalized song title** (lowercase, bracketed suffixes like *(feat. …)* removed, punctuation stripped). 75–85% of songs played match a core album while the rest are singles, collaborations and covers.
 
 ---
 
-## 📐 Key Metrics & Business Rules
+## 📐 Key Metrics
 
 | Metric / rule | Definition |
 |---|---|
 | **Cycle album** | The artist's latest studio album released **on or before** the show date |
-| **Cycle album share** | Songs from the cycle album ÷ songs played (tape intros excluded) |
-| **Album match rate** | Songs from any core album ÷ songs played |
-| **Days to road** | Release date → first tour show (tour name and 15+ songs, which excludes TV and promo sets) |
-| **On tour** | Last show within the Touring Window parameter (default 90 days) |
-| **Home album** | A song belongs to the earliest core album it appears on |
-
-The cycle album logic, which drives most of the analysis:
-
-```sql
-cycle AS (
-    SELECT s.SETLIST_ID, a.ALBUM_ID AS cycle_album_id
-    FROM shows s
-    JOIN DS_ALBUM a
-      ON a.ARTIST_MBID    = s.ARTIST_MBID
-     AND a.ALBUM_CATEGORY = 'Studio'
-     AND a.RELEASE_DATE  <= s.event_date          -- only albums already out
-    QUALIFY ROW_NUMBER() OVER (PARTITION BY s.SETLIST_ID
-                               ORDER BY a.RELEASE_DATE DESC) = 1   -- the newest of those
-)
-```
+| **Cycle album share** | Songs from the cycle album / songs played |
+| **Album match rate** | Songs from any core album / songs played |
+| **Days to road** | Newest album release date to the first tour show (the show must have a tour name associated with it and at least 15+ songs, which excludes TV and promo sets) |
+| **On tour** | Last show happened within the Touring Window parameter (default 90 days) |
 
 ---
 
@@ -122,18 +107,18 @@ cycle AS (
 
 ## ▶️ Reproducing the Pipeline
 
-1. **Get API access:** request a free [setlist.fm API key](https://www.setlist.fm/settings/api) (non-commercial use). MusicBrainz needs no key, only an identifying `User-Agent`.
-2. **Add your key:** save it in a local `setlistfm_key.txt`, which is listed in `.gitignore` and never committed.
-3. **Run the Alteryx workflows** with the AMP engine **off** (the Throttle tool isn't fully supported under AMP). They output three raw CSVs.
-4. **Load to Snowflake:** create the `DS_*_RAW` tables and load the CSVs through Snowsight (UTF-8, skip 1 header line, double-quote enclosure).
-5. **Run `sql/ddl_dml.sql`** top to bottom. Each table is a `CREATE OR REPLACE TABLE` followed by an `INSERT INTO … SELECT` that does its own cleaning.
-6. **Open the Tableau workbook** and point the data source at your Snowflake tables, or use the packaged extract as-is.
+1. **Get API access:** request a free [setlist.fm API key](https://www.setlist.fm/settings/api) (non-commercial use). MusicBrainz needs no key, only an identifying `User-Agent`
+2. **Add your key:** save it in a local file
+3. **Run the Alteryx workflows** and output the three raw CSVs.
+4. **Load to Snowflake:** create the `DS_*_RAW` tables and load the CSVs
+5. **Run `sql/ddl_dml.sql`** in Snowflake
+6. **Open the Tableau workbook** and point the data source at your Snowflake tables or use an extract instead
 
 ---
 
-## ⚠️ Data Notes & Limitations
+## ⚠️ Limitations
 
-- **Fan-logged data:** setlist.fm is crowd-sourced, so recent shows may not be logged yet. Kendrick Lamar's 2025 Grand National Tour is logged under a joint Kendrick Lamar & SZA entry and is missing here, which inflates his days-to-road figure and the year-over-year show growth.
+- **Fan-logged data:** setlist.fm is crowd-sourced, so recent shows may not be logged yet. Kendrick Lamar's 2025 Grand National Tour is logged under a joint Kendrick Lamar & SZA entry and is missing here, so that increased his days-to-road value and the year-over-year show growth.
 - **Not every setlist is a concert:** TV tapings, pop-ups and festival sets are logged too, and a tour-show rule filters them where it matters.
 - **Collaborations show up as covers:** setlist.fm labels songs by side projects and features (e.g. Silk Sonic) as covers; these are reclassified as *Collaboration*.
 - **City-level coordinates:** venues share their city's latitude and longitude.
@@ -150,10 +135,10 @@ cycle AS (
 
 ---
 
-## 🙏 Data & Credits
+## 🙏 Credits
 
-- Setlist data from [setlist.fm](https://www.setlist.fm), used under its [API terms](https://www.setlist.fm/help/api-terms) for non-commercial use; dashboards link back to each source setlist.
-- Album and track data from [MusicBrainz](https://musicbrainz.org) (CC0).
-- *Encore Row* is a fictional client created for this project; it isn't affiliated with any of the artists.
+- Setlist data from [setlist.fm](https://www.setlist.fm), used under its [API terms](https://www.setlist.fm/help/api-terms) for non-commercial use
+- Album and track data from [MusicBrainz](https://musicbrainz.org), and no API key needed
+- *Encore Row* is a hypothetical client created for this project which isn't associated with any of these artists
 
-**Author:** Dylan Serino · Data School NYC · [LinkedIn](https://www.linkedin.com/in/YOUR_PROFILE) · [Blog](https://www.thedataschool.com/YOUR_BLOG)
+**Author:** Dylan Serino
