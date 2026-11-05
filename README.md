@@ -128,7 +128,7 @@ BID), so artists can easily join across the two APIs. Setlist songs match album 
 
 - Schedule the pipeline with Alteryx connected to Snowflake automatically
 - Add demand data (ticket prices, listener counts) to add more depth to artist performance
-- A tour-leg table (show → next show, distance via `HAVERSINE`) for a routing-efficiency map
+- A tour routing map view artist tour paths and find more efficient pathing using MAKELINE or HAVERSINE functions
 
 ---
 
