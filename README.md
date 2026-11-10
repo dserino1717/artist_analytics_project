@@ -123,7 +123,7 @@ BID), so artists can easily join across the two APIs. Setlist songs match album 
 2. **Add your key:** save it in a local file
 3. **Run the Alteryx workflows** and output the three raw CSVs.
 4. **Load to Snowflake:** create the `DS_*_RAW` tables and load the CSVs
-5. **Run `sql/ddl_dml.sql`** in Snowflake
+5. **Run `SQL/DDL_DML.sql`** in Snowflake
 6. **Open the Tableau workbook** and point the data source at your Snowflake tables or use an extract instead
 
 ---
