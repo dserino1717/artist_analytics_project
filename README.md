@@ -2,6 +2,8 @@
 
 **An end-to-end data pipeline that simulates an artist management firm looking to track artist performance and tour status**
 
+**Main Business Question: Is each artist's new album carrying their recent shows, and which artists need support?**
+
 The timeline was about one week, from API ingestion to the Tableau executive and analyst dashboards.
 
 A little about the technology and data I used...
