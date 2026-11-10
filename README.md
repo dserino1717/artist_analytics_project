@@ -24,7 +24,7 @@ A little about the technology and data I used...
 - **KPIs:** top artist by shows, shows played, countries reached, average cycle album share (each vs. the same period last year)
 - **Roster status:** a simple table to show each artist's latest album, days since release, shows since release and whether they're on tour
 - **What's in each artist's set:** the share of songs from the newest album, with artists below a 30% threshold flagged so executives know to support them more
-  - **Why 30%**: While the executive can dynamically change this threshold, it is seen as a good rule of thumb to have about 30-40% of setlists on a new album tour contain songs from that new album
+  - **Why 30%**: I set 30% as the default target, but executives can adjust this as needed with a threshold parameter
 
 [![Executive Overview](https://public.tableau.com/static/images/En/EncoreRow-VPofTouringArtistsOverviewDashboard/VPTouringDashboard/1.png)](https://public.tableau.com/views/EncoreRow-VPofTouringArtistsOverviewDashboard/VPTouringDashboard)
 
@@ -127,7 +127,7 @@ BID), so artists can easily join across the two APIs. Setlist songs match album 
 4. **Load to Snowflake:** create the `DS_*_RAW` tables and load the CSVs
 5. **Run `SQL/DDL_DML.sql`** in Snowflake
 6. **Open the Tableau workbook** and point the data source at your Snowflake tables or use an extract instead
-
+**Note that the twbx file attached in this repo uses local CSVs as the data source, not Snowflake
 ---
 
 ## ⚠️ Limitations
