@@ -146,6 +146,16 @@ BID), so artists can easily join across the two APIs. Setlist songs match album 
 
 ---
 
+## Blogs
+
+During the project, I kept blogs through the Data School at The Information Lab to track my progress. Here are those blogs:
+
+- [Day 1](https://www.thedataschool.co.uk/dylan-serino/capstone-project-day-1-gathering-data-from-music-apis-using-alteryx/)
+- [Day 2](https://www.thedataschool.co.uk/dylan-serino/capstone-project-day-2-loading-tables-into-snowflake-with-ddl-dml-sql/)
+- [Day 3](https://www.thedataschool.co.uk/dylan-serino/capstone-project-day-3-sketching-dashboard-views/)
+- [Day 4](https://www.thedataschool.co.uk/dylan-serino/capstone-project-day-4-continuing-sketching-and-building-out-dashboards/)
+- [Day 5](https://www.thedataschool.co.uk/dylan-serino/untitled-314/)
+
 ## 🙏 Credits
 
 - Setlist data from [setlist.fm](https://www.setlist.fm), used under its [API terms](https://www.setlist.fm/help/api-terms) for non-commercial use
