@@ -384,7 +384,7 @@ select distinct song_key
 from ds_song;
 
 
-//checking out tables
+--checking out tables
 select *
 from ds_show;
 
